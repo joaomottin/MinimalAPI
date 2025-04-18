@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\MinimalAPI\\MinimalAPI\\MinimalAPI.csproj": {}
+    "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\MinimalAPI\\MinimalAPI\\MinimalAPI.csproj": {
+    "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\MinimalAPI\\MinimalAPI\\MinimalAPI.csproj",
+        "projectUniqueName": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj",
         "projectName": "MinimalAPI",
-        "projectPath": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\MinimalAPI\\MinimalAPI\\MinimalAPI.csproj",
+        "projectPath": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj",
         "packagesPath": "C:\\Users\\joaop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\MinimalAPI\\MinimalAPI\\obj\\",
+        "outputPath": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\MinimalAPI\\Positivo\\MinimalAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joaop\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -42,9 +42,25 @@
               "target": "Package",
               "version": "[7.0.20, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.5.0, )"
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
