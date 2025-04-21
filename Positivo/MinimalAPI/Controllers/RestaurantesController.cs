@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using API.Modelos;
 using Microsoft.EntityFrameworkCore;
 
-namespace MinimalAPI.Controllers;
+namespace Namespace;
 
 [ApiController]
 [Route("[controller]")]
