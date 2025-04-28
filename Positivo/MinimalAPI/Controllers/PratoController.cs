@@ -1,87 +1,85 @@
+using API.Modelos;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Namespace;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Namespace
+namespace API.Controllers;
+
+[ApiController]
+[Route("api/pratos")]
+public class PratoController : ControllerBase
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class PratosController : ControllerBase
-    {
-        private readonly AppDataContext _context;
+    private readonly AppDataContext _context;
+    public PratoController(AppDataContext context) {
+        this._context = context;
+    }
 
-        public PratosController(AppDataContext context)
-        {
-            _context = context;
+    [HttpGet]
+    public IActionResult ListAll() {
+        List<Prato> pratos = _context.Pratos
+                                     .Include(p => p.Restaurante)
+                                     .ToList();
+        return Ok(pratos);
+    }
+
+    [HttpGet("{id}")]
+    public IActionResult FindById(int id) {
+        var prato = _context.Pratos
+                            .Include(p => p.Restaurante)
+                            .FirstOrDefault(p => p.Id == id);
+        if (prato == null) {
+            return NotFound();
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Prato>>> Get()
-        {
-            return await _context.Pratos
-                .Include(p => p.Restaurante)
-                .ToListAsync();
+        return Ok(prato);    
+    }
+
+    [HttpPost]
+    public IActionResult Create(Prato prato) {
+        var restaurante = _context.Restaurantes.Find(prato.RestauranteId);
+
+        if (restaurante == null) {
+            return NotFound("Restaurante não encontrado");
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Prato>> Get(int id)
-        {
-            var prato = await _context.Pratos
-                .Include(p => p.Restaurante)
-                .FirstOrDefaultAsync(p => p.Id == id);
+        prato.Restaurante = restaurante;
+        _context.Pratos.Add(prato);
+        _context.SaveChanges();
 
-            if (prato == null)
-                return NotFound();
+        return Created("", prato);
+    }
 
-            return prato;
+    [HttpPut("{id}")]
+    public IActionResult Update(int id, Prato prato) {
+        var entitidade = _context.Pratos.Find(id);
+        if (entitidade == null) {
+            return NotFound("Prato não encontrado");
         }
 
-        [HttpPost]
-        public async Task<ActionResult<Prato>> Post(Prato prato)
-        {
-            _context.Pratos.Add(prato);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(Get), new { id = prato.Id }, prato);
+        var restaurante = _context.Restaurantes.Find(prato.RestauranteId);
+        if (restaurante == null) {
+            return NotFound("Restaurante não encontrado");
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, Prato prato)
-        {
-            if (id != prato.Id)
-                return BadRequest();
+        entitidade.Restaurante = restaurante;
+        entitidade.Nome = prato.Nome;
+        entitidade.Descricao = prato.Descricao;
+        entitidade.Preco = prato.Preco;
 
-            _context.Entry(prato).State = EntityState.Modified;
+        _context.Pratos.Update(entitidade);
+        _context.SaveChanges();
+        return Ok(entitidade);
+    }
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!_context.Pratos.Any(p => p.Id == id))
-                    return NotFound();
-                else
-                    throw;
-            }
-
-            return NoContent();
+    [HttpDelete("{id}")]
+    public IActionResult Delete(int id) {
+        var prato = _context.Pratos.Find(id);
+        if (prato == null) {
+            return NotFound();
         }
 
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var prato = await _context.Pratos.FindAsync(id);
-            if (prato == null)
-                return NotFound();
-
-            _context.Pratos.Remove(prato);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
-        }
+        _context.Pratos.Remove(prato);
+        _context.SaveChanges();
+        return NoContent();
     }
 }
