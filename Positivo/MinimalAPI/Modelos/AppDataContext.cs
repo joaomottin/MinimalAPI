@@ -20,10 +20,10 @@ namespace Namespace
             );
 
             modelBuilder.Entity<Prato>().HasData(
-                new Prato() { Id = 1, Nome = "Pato de Pomerode", Descricao = "Coxa e sobrecoxa de pato recheadas com miúdos, servidas com purê de batatas, chutney de maçãs e espuma de laranja.", Preco = 79.99m, RestauranteId = 1 },
-                new Prato() { Id = 1, Nome = "Panza de Cerdo", Descricao = "Barriga de porco confitada, acompanhada de vagens grelhadas e purê de batatas. ", Preco = 99.99m, RestauranteId = 1 },
-                new Prato() { Id = 2, Nome = "Robalo em Crosta de Castanha", Descricao = "Robalo coberto com crosta de castanha-de-caju, acompanhado de pappardelle ao molho de ervas e limão-siciliano.", Preco = 59.99m, RestauranteId = 2 },
-                new Prato() { Id = 2, Nome = "Filé ao Molho de Mostarda com Ravioloni", Descricao = "Filé-mignon ao molho de mostarda, servido com ravioloni de queijo, tomate seco e aspargo.", Preco = 119.99m, RestauranteId = 2 }
+                new Prato() { Id = 1, Nome = "Pato de Pomerode", Descricao = "Coxa e sobrecoxa de           pato recheadas com miúdos, servidas com purê de batatas, chutney de maçãs e espuma          de laranja.", Preco = 79.99m, RestauranteId = 1 },
+                new Prato() { Id = 2, Nome = "Panza de Cerdo", Descricao = "Barriga de porco            confitada, acompanhada de vagens grelhadas e purê de batatas.", Preco = 99.99m,         RestauranteId = 1 },
+                new Prato() { Id = 3, Nome = "Robalo em Crosta de Castanha", Descricao = "Robalo            coberto com crosta de castanha-de-caju, acompanhado de pappardelle ao molho de ervas        e limão-siciliano.", Preco = 59.99m, RestauranteId = 2 },
+                new Prato() { Id = 4, Nome = "Filé ao Molho de Mostarda com Ravioloni", Descricao =             "Filé-mignon ao molho de mostarda, servido com ravioloni de queijo, tomate seco e           aspargo.", Preco = 119.99m, RestauranteId = 2 }
             );
         }
     }
