@@ -1,0 +1,40 @@
+# Testes de API - Pratos e Restaurantes
+
+### Lista todos os pratos
+GET http://localhost:5163/api/pratos
+
+### Busca prato pelo Id
+GET http://localhost:5163/api/pratos/1
+
+### Cadastra um novo prato
+POST http://localhost:5163/api/pratos
+Content-Type: application/json
+
+{
+  "nome": "Lasanha",
+  "descricao": "Lasanha de carne com queijo",
+  "preco": 29.90,
+  "restauranteId": 1
+}
+
+### Atualiza um prato
+PUT http://localhost:5163/api/pratos/1
+Content-Type: application/json
+
+{
+  "nome": "Lasanha Vegetariana",
+  "descricao": "Lasanha de legumes com queijo",
+  "preco": 31.50,
+  "restauranteId": 1
+}
+
+### Remove um prato
+DELETE http://localhost:5163/api/pratos/1
+
+# Rotas de Restaurantes
+
+### Lista todos os restaurantes
+GET http://localhost:5163/api/restaurantes
+
+### Busca restaurante pelo Id
+GET http://localhost:5163/api/restaurantes/1
