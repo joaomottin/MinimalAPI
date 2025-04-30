@@ -1,6 +1,13 @@
-📌 Project Description
-This project is a digital menu system developed using Minimal API in C# with .NET 7 for the backend and React with TypeScript for the frontend. The main goal is to provide a modern, responsive interface for restaurant management, allowing users to create, read, update, and delete restaurants, dishes, categories, and ingredients.
+📌 Descrição do Projeto
+Este projeto é um sistema de cardápio digital desenvolvido utilizando Minimal API em C# com .NET 7 no backend. O principal objetivo é fornecer uma API eficiente para a gestão de restaurantes, permitindo que os usuários criem, leiam, atualizem e excluam restaurantes, pratos, categorias e ingredientes.
 
-The Web API follows the RESTful standard, with data persistence handled via Entity Framework Core and a SQLite database. On the frontend, the system displays information in an interactive and organized way, making it easy to manage and browse the menu.
+A Web API segue o padrão RESTful, com persistência de dados feita via Entity Framework Core e banco de dados SQLite.
 
+✅ Como testar a API
 
+1. Rodando o Program.cs
+Basta abrir o projeto e rodar o Program.cs normalmente, usando o Swagger para testar a aplicação.
+
+2. Usando o arquivo requests.http
+Vá até a pasta Testes.
+Abra o arquivo requests.http e envie as requisições.
