@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\finalmente\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj": {}
+    "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\Csharp TRABALHO FINAL\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\finalmente\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj": {
+    "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\Csharp TRABALHO FINAL\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\finalmente\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj",
+        "projectUniqueName": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\Csharp TRABALHO FINAL\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj",
         "projectName": "MinimalAPI",
-        "projectPath": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\finalmente\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj",
+        "projectPath": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\Csharp TRABALHO FINAL\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj",
         "packagesPath": "C:\\Users\\joaop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\finalmente\\MinimalAPI\\Positivo\\MinimalAPI\\obj\\",
+        "outputPath": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\Csharp TRABALHO FINAL\\MinimalAPI\\Positivo\\MinimalAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\joaop\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -32,13 +32,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net7.0": {
@@ -88,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.410\\RuntimeIdentifierGraph.json"
         }
       }
     }
