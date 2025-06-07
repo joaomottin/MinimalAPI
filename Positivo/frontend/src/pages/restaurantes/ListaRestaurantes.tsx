@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-<<<<<<< HEAD
 import axios from 'axios';
 import { Restaurante } from '../../models/Restaurante';
-import '../../Style.css';
 
 export default function ListaRestaurantes() {
   const [restaurantes, setRestaurantes] = useState<Restaurante[]>([]);
@@ -15,23 +13,29 @@ export default function ListaRestaurantes() {
   }, []);
 
   return (
-    <div className="container">
-      <h1>Restaurantes Cadastrados</h1>
-      <div className="grid-cards">
-        {restaurantes.map((restaurante) => (
-          <div key={restaurante.id} className="card">
-            <h3>{restaurante.nome}</h3>
-            <p>{restaurante.endereco}</p>
-            <p>{restaurante.telefone}</p>
-          </div>
-        ))}
-        {restaurantes.length === 0 && <p>Nenhum restaurante encontrado.</p>}
-      </div>
+    <div>
+      <h3 className="text-lg font-semibold mb-4 text-gray-800">
+        Restaurantes Cadastrados
+      </h3>
+
+      {restaurantes.length === 0 ? (
+        <p className="text-gray-500">Nenhum restaurante encontrado.</p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {restaurantes.map((restaurante) => (
+            <div
+              key={restaurante.id}
+              className="bg-white border border-gray-200 rounded p-4 shadow hover:shadow-md transition"
+            >
+              <h4 className="text-blue-700 font-bold text-lg">
+                {restaurante.nome}
+              </h4>
+              <p className="text-sm text-gray-600">{restaurante.endereco}</p>
+              <p className="text-sm text-gray-600">{restaurante.telefone}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
-=======
-import { Restaurante } from '../../models/Restaurante';
-
-//On building...
->>>>>>> origin/main
