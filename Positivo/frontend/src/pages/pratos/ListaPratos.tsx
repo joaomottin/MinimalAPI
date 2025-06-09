@@ -12,19 +12,39 @@ const ListaPratos = () => {
   }, []);
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-2xl font-semibold">Pratos</h2>
-        <Link to="/pratos/novo" className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Novo</Link>
+    <div className="max-w-5xl mx-auto space-y-6">
+      <div className="flex justify-between items-center border-b pb-3">
+        <h2 className="text-2xl font-bold text-gray-800">Lista de Pratos</h2>
+        <Link
+          to="/pratos/novo"
+          className="bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded-lg transition shadow"
+        >
+          + Novo
+        </Link>
       </div>
-      <ul className="space-y-2">
-        {pratos.map(p => (
-          <li key={p.id} className="bg-white shadow p-4 rounded-md flex justify-between items-center">
-            <span>{p.nome}</span>
-            <Link to={`/pratos/${p.id}`} className="text-blue-600 hover:underline">Editar</Link>
-          </li>
-        ))}
-      </ul>
+
+      {pratos.length === 0 ? (
+        <p className="text-gray-500 italic">Nenhum prato cadastrado.</p>
+      ) : (
+        <ul className="space-y-4">
+          {pratos.map(p => (
+            <li
+              key={p.id}
+              className="bg-white border border-gray-200 p-5 rounded-xl shadow hover:shadow-md transition flex justify-between items-center"
+            >
+              <div>
+                <p className="text-lg font-medium text-gray-800">{p.nome}</p>
+              </div>
+              <Link
+                to={`/pratos/${p.id}`}
+                className="text-blue-600 font-medium hover:underline transition"
+              >
+                Editar
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

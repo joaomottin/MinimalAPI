@@ -13,25 +13,29 @@ export default function ListaRestaurantes() {
   }, []);
 
   return (
-    <div>
-      <h3 className="text-lg font-semibold mb-4 text-gray-800">
+    <div className="space-y-6">
+      <h3 className="text-2xl font-bold text-gray-800 border-b pb-2">
         Restaurantes Cadastrados
       </h3>
 
       {restaurantes.length === 0 ? (
-        <p className="text-gray-500">Nenhum restaurante encontrado.</p>
+        <p className="text-gray-500 text-center italic">Nenhum restaurante encontrado.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {restaurantes.map((restaurante) => (
             <div
               key={restaurante.id}
-              className="bg-white border border-gray-200 rounded p-4 shadow hover:shadow-md transition"
+              className="bg-white border border-gray-200 rounded-xl p-5 shadow hover:shadow-lg transition-all duration-200"
             >
-              <h4 className="text-blue-700 font-bold text-lg">
+              <h4 className="text-lg font-semibold text-blue-700 mb-1">
                 {restaurante.nome}
               </h4>
-              <p className="text-sm text-gray-600">{restaurante.endereco}</p>
-              <p className="text-sm text-gray-600">{restaurante.telefone}</p>
+              <p className="text-sm text-gray-600">
+                📍 {restaurante.endereco || 'Endereço não informado'}
+              </p>
+              <p className="text-sm text-gray-600">
+                ☎️ {restaurante.telefone || 'Telefone não informado'}
+              </p>
             </div>
           ))}
         </div>

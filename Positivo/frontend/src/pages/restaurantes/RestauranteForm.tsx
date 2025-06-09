@@ -20,22 +20,43 @@ const RestauranteForm = () => {
 
     const request = id
       ? axios.put(`http://localhost:3000/restaurantes/${id}`, dados)
-      : axios.post('http://localhost:3000/restaurantes/', dados);
+      : axios.post('http://localhost:3000/restaurantes/`, dados);
 
     request.then(() => navigate('/restaurantes'));
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-white p-6 rounded-md shadow">
-      <h2 className="text-xl font-semibold mb-4">{id ? 'Editar Restaurante' : 'Novo Restaurante'}</h2>
-      <input
-        type="text"
-        value={nome}
-        onChange={e => setNome(e.target.value)}
-        className="w-full p-2 border border-gray-300 rounded mb-4"
-        placeholder="Nome do restaurante"
-      />
-      <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Salvar</button>
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg space-y-6 transition-all"
+    >
+      <h2 className="text-2xl font-bold text-gray-800">
+        {id ? 'Editar Restaurante' : 'Cadastrar Novo Restaurante'}
+      </h2>
+
+      <div>
+        <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-1">
+          Nome do restaurante
+        </label>
+        <input
+          id="nome"
+          type="text"
+          value={nome}
+          onChange={e => setNome(e.target.value)}
+          placeholder="Ex: Cantina do Cadu"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+          required
+        />
+      </div>
+
+      <div className="text-right">
+        <button
+          type="submit"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition shadow"
+        >
+          {id ? 'Atualizar' : 'Salvar'}
+        </button>
+      </div>
     </form>
   );
 };
