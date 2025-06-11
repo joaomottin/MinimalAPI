@@ -48,8 +48,8 @@ export default function ListaRestaurantes() {
           {restaurantes.map(({ id, nome, endereco, telefone }) => (
             <section key={id} className="card" onClick={() => buscarDetalhe(id)}>
               <h3>{nome}</h3>
-              <p>📍 {endereco || 'Endereço não informado'}</p>
-              <p>☎️ {telefone || 'Telefone não informado'}</p>
+              <p>{endereco || 'Endereço não informado'}</p>
+              <p>{telefone || 'Telefone não informado'}</p>
             </section>
           ))}
         </>
