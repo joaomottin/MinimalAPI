@@ -1760,11 +1760,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\Csharp TRABALHO FINAL\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj",
+      "projectUniqueName": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\teste\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj",
       "projectName": "MinimalAPI",
-      "projectPath": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\Csharp TRABALHO FINAL\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj",
+      "projectPath": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\teste\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj",
       "packagesPath": "C:\\Users\\joaop\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\Csharp TRABALHO FINAL\\MinimalAPI\\Positivo\\MinimalAPI\\obj\\",
+      "outputPath": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\teste\\MinimalAPI\\Positivo\\MinimalAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\joaop\\AppData\\Roaming\\NuGet\\NuGet.Config"

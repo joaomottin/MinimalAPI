@@ -1,9 +1,8 @@
 import React from 'react';
-import RestauranteForm from './pages/restaurantes/RestauranteForm';
 import ListaRestaurantes from './pages/restaurantes/ListaRestaurantes';
 import PratoForm from './pages/pratos/PratoForm';
 import ListaPratos from './pages/pratos/ListaPratos';
-import './index.css'; // Tailwind CSS
+import './index.css';
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
         <div className="bg-white shadow-md rounded p-6">
           <h2 className="text-xl font-semibold mb-4">Cadastrar Restaurante</h2>
-          <RestauranteForm />
         </div>
 
         <div className="bg-white shadow-md rounded p-6">
