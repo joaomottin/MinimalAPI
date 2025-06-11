@@ -1,96 +1,52 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-<<<<<<< HEAD
-import { Prato } from '../../models/Prato';
-import '../../Style.css';
+import { Link } from 'react-router-dom';
+import IPrato from '../../models/Prato';
 
-export default function ListaPratos() {
-  const [pratos, setPratos] = useState<Prato[]>([]);
-
-  useEffect(() => {
-    axios
-      .get('http://localhost:5163/api/pratos')
-      .then((response) => {
-        setPratos(response.data);
-      })
-      .catch((err) => {
-        console.error('Erro ao buscar pratos:', err);
-=======
-
-import { Prato } from '../../models/Prato';
-
-function ListaPratos() {
-
-  const [pratos, setPratos] = useState<Prato[]>([]);
+const ListaPratos = () => {
+  const [pratos, setPratos] = useState<IPrato[]>([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5163/api/pratos")
-      .then(response => {
-        setPratos(response.data);
-      })
-      .catch(err => {
-        console.error("Erro ao buscar pratos:", err);
-        alert("Erro ao buscar pratos.");
->>>>>>> origin/main
-      });
+    axios.get('http://localhost:3000/pratos/')
+      .then(response => setPratos(response.data));
   }, []);
 
   return (
-<<<<<<< HEAD
-    <div className="container">
-      <h1>Pratos Cadastrados</h1>
-      <table className="table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Descrição</th>
-            <th>Preço (R$)</th>
-            <th>Restaurante</th>
-          </tr>
-        </thead>
-        <tbody>
-          {pratos.length === 0 && (
-            <tr>
-              <td colSpan={5}>Nenhum prato encontrado.</td>
-            </tr>
-          )}
-=======
-    <div className="teste">
-      <h1>Lista de Pratos</h1>
+    <div className="max-w-5xl mx-auto space-y-6">
+      <div className="flex justify-between items-center border-b pb-3">
+        <h2 className="text-2xl font-bold text-gray-800">Lista de Pratos</h2>
+        <Link
+          to="/pratos/novo"
+          className="bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded-lg transition shadow"
+        >
+          + Novo
+        </Link>
+      </div>
 
-      <table>
-        <thead>
-          <tr>
-            <td>#</td>
-            <td>Nome</td>
-            <td>Descrição</td>
-            <td>Preço</td>
-            <td>Restaurante</td>
-          </tr>
-        </thead>
-        <tbody>
->>>>>>> origin/main
-          {pratos.map((prato) => (
-            <tr key={prato.id}>
-              <td>{prato.id}</td>
-              <td>{prato.nome}</td>
-              <td>{prato.descricao}</td>
-<<<<<<< HEAD
-              <td>{prato.preco.toFixed(2)}</td>
-=======
-              <td>R$ {prato.preco.toFixed(2)}</td>
->>>>>>> origin/main
-              <td>{prato.restaurante?.nome ?? 'Não informado'}</td>
-            </tr>
+      {pratos.length === 0 ? (
+        <p className="text-gray-500 italic">Nenhum prato cadastrado.</p>
+      ) : (
+        <ul className="space-y-4">
+          {pratos.map(p => (
+            <li
+              key={p.id}
+              className="bg-white border border-gray-200 p-5 rounded-xl shadow hover:shadow-md transition flex justify-between items-center"
+            >
+              <div>
+                <p className="text-lg font-medium text-gray-800">{p.nome}</p>
+              </div>
+              <Link
+                to={`/pratos/${p.id}`}
+                className="text-blue-600 font-medium hover:underline transition"
+              >
+                Editar
+              </Link>
+            </li>
           ))}
-        </tbody>
-      </table>
+        </ul>
+      )}
     </div>
   );
-}
-<<<<<<< HEAD
-=======
+};
 
 export default ListaPratos;
->>>>>>> origin/main

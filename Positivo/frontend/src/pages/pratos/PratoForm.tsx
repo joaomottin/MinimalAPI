@@ -1,92 +1,64 @@
-import React, { useState, useEffect } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import { Restaurante } from '../../models/Restaurante';
-import '../../Style.css';
 
-export default function PratoForm() {
+const PratoForm = () => {
   const [nome, setNome] = useState('');
-  const [descricao, setDescricao] = useState('');
-  const [preco, setPreco] = useState(0);
-  const [restauranteId, setRestauranteId] = useState<number | ''>('');
-  const [restaurantes, setRestaurantes] = useState<Restaurante[]>([]);
+  const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    axios
-      .get('http://localhost:5163/api/restaurantes')
-      .then((response) => setRestaurantes(response.data))
-      .catch((err) => console.error('Erro ao buscar restaurantes:', err));
-  }, []);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (restauranteId === '') {
-      alert('Selecione um restaurante válido.');
-      return;
+    if (id) {
+      axios.get(`http://localhost:3000/pratos/${id}`)
+        .then(response => setNome(response.data.nome));
     }
-    const novoPrato = { nome, descricao, preco, restauranteId };
-    axios
-      .post('http://localhost:5163/api/pratos', novoPrato)
-      .then(() => {
-        alert('Prato cadastrado com sucesso!');
-        setNome('');
-        setDescricao('');
-        setPreco(0);
-        setRestauranteId('');
-      })
-      .catch((err) => {
-        console.error('Erro ao cadastrar prato:', err);
-      });
+  }, [id]);
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const dados = { nome };
+
+    const request = id
+      ? axios.put(`http://localhost:3000/pratos/${id}`, dados)
+      : axios.post('http://localhost:3000/pratos/', dados);
+
+    request.then(() => navigate('/pratos'));
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form-container">
-      <h2>Cadastrar Prato</h2>
-      <div className="form-group">
-        <label>Nome:</label>
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg space-y-6 transition-all"
+    >
+      <h2 className="text-2xl font-bold text-gray-800">
+        {id ? 'Editar Prato' : 'Cadastrar Novo Prato'}
+      </h2>
+
+      <div>
+        <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-1">
+          Nome do prato
+        </label>
         <input
+          id="nome"
           type="text"
           value={nome}
-          onChange={(e) => setNome(e.target.value)}
+          onChange={e => setNome(e.target.value)}
+          placeholder="Ex: Lasanha à bolonhesa"
+          className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
           required
         />
       </div>
-      <div className="form-group">
-        <label>Descrição:</label>
-        <input
-          type="text"
-          value={descricao}
-          onChange={(e) => setDescricao(e.target.value)}
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label>Preço (R$):</label>
-        <input
-          type="number"
-          step="0.01"
-          value={preco}
-          onChange={(e) => setPreco(parseFloat(e.target.value))}
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label>Restaurante:</label>
-        <select
-          value={restauranteId}
-          onChange={(e) =>
-            setRestauranteId(e.target.value === '' ? '' : Number(e.target.value))
-          }
-          required
+
+      <div className="text-right">
+        <button
+          type="submit"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-lg transition shadow"
         >
-          <option value="">Selecione</option>
-          {restaurantes.map((r) => (
-            <option key={r.id} value={r.id}>
-              {r.nome}
-            </option>
-          ))}
-        </select>
+          {id ? 'Atualizar' : 'Salvar'}
+        </button>
       </div>
-      <button type="submit">Cadastrar</button>
     </form>
   );
-}
+};
+
+export default PratoForm;
