@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import IPrato from '../../models/Prato';
+import { Prato } from '../../models/Prato';
 
 const ListaPratos = () => {
-  const [pratos, setPratos] = useState<IPrato[]>([]);
+  const [pratos, setPratos] = useState<Prato[]>([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/pratos/')
+    axios.get('http://localhost:5163/pratos/')
       .then(response => setPratos(response.data));
   }, []);
 

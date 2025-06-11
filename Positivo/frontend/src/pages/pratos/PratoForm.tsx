@@ -9,7 +9,7 @@ const PratoForm = () => {
 
   useEffect(() => {
     if (id) {
-      axios.get(`http://localhost:3000/pratos/${id}`)
+      axios.get(`http://localhost:5163/pratos/${id}`)
         .then(response => setNome(response.data.nome));
     }
   }, [id]);
@@ -19,8 +19,8 @@ const PratoForm = () => {
     const dados = { nome };
 
     const request = id
-      ? axios.put(`http://localhost:3000/pratos/${id}`, dados)
-      : axios.post('http://localhost:3000/pratos/', dados);
+      ? axios.put(`http://localhost:5163/pratos/${id}`, dados)
+      : axios.post('http://localhost:5163/pratos/', dados);
 
     request.then(() => navigate('/pratos'));
   };
