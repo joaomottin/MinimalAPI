@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\Csharp TRABALHO FINAL\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj": {}
+    "C:\\Users\\IAGOMAYERBACH\\Desktop\\trabalho Cshark\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\Csharp TRABALHO FINAL\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj": {
+    "C:\\Users\\IAGOMAYERBACH\\Desktop\\trabalho Cshark\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\Csharp TRABALHO FINAL\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj",
+        "projectUniqueName": "C:\\Users\\IAGOMAYERBACH\\Desktop\\trabalho Cshark\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj",
         "projectName": "MinimalAPI",
-        "projectPath": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\Csharp TRABALHO FINAL\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj",
-        "packagesPath": "C:\\Users\\joaop\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joaop\\OneDrive\\Área de Trabalho\\Csharp TRABALHO FINAL\\MinimalAPI\\Positivo\\MinimalAPI\\obj\\",
+        "projectPath": "C:\\Users\\IAGOMAYERBACH\\Desktop\\trabalho Cshark\\MinimalAPI\\Positivo\\MinimalAPI\\MinimalAPI.csproj",
+        "packagesPath": "C:\\Users\\IAGOMAYERBACH\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\IAGOMAYERBACH\\Desktop\\trabalho Cshark\\MinimalAPI\\Positivo\\MinimalAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\joaop\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\IAGOMAYERBACH\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -82,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.410\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

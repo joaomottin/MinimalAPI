@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-<<<<<<< HEAD
 import axios from 'axios';
 import { Restaurante } from '../../models/Restaurante';
 import '../../Style.css';
@@ -10,28 +9,28 @@ export default function ListaRestaurantes() {
   useEffect(() => {
     axios
       .get('http://localhost:5163/api/restaurantes')
-      .then((response) => setRestaurantes(response.data))
-      .catch((err) => console.error('Erro ao buscar restaurantes:', err));
+      .then((res) => {
+        setRestaurantes(res.data);
+      })
+      .catch((err) => {
+        console.error('Erro ao buscar restaurantes:', err);
+      });
   }, []);
 
   return (
-    <div className="container">
-      <h1>Restaurantes Cadastrados</h1>
-      <div className="grid-cards">
-        {restaurantes.map((restaurante) => (
-          <div key={restaurante.id} className="card">
-            <h3>{restaurante.nome}</h3>
-            <p>{restaurante.endereco}</p>
-            <p>{restaurante.telefone}</p>
-          </div>
-        ))}
-        {restaurantes.length === 0 && <p>Nenhum restaurante encontrado.</p>}
-      </div>
+    <div className="list-container">
+      <h2>Restaurantes Cadastrados</h2>
+      {restaurantes.length === 0 ? (
+        <p>Nenhum restaurante cadastrado.</p>
+      ) : (
+        <ul>
+          {restaurantes.map((r) => (
+            <li key={r.id}>
+              <strong>{r.nome}</strong> – {r.endereco} – {r.telefone}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
-=======
-import { Restaurante } from '../../models/Restaurante';
-
-//On building...
->>>>>>> origin/main
