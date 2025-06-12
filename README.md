@@ -8,13 +8,13 @@
 
 Este é um sistema completo de cardápio digital, composto por:
 
-* 🖥 *Back-end:* API RESTful feita com *.NET 7 Minimal API, persistência com **Entity Framework Core* e *SQLite, testável via **Swagger*.
-* 💻 *Front-end:* Desenvolvido em *React*, com interface responsiva e moderna.
-* 📂 *Versionamento:* Gerenciado com *Git + GitHub*, permitindo colaboração e rastreamento de mudanças.
+* 🖥 *Back-end:* API RESTful desenvolvida com *.NET 7 Minimal API, utilizando **Entity Framework Core* e banco de dados *SQLite, com testes facilitados via **Swagger*.
+* 💻 *Front-end:* Criado com *React*, proporcionando uma interface moderna, amigável e responsiva.
+* 📂 *Versionamento:* Controle de código com *Git + GitHub*, garantindo histórico e colaboração eficiente.
 
-Funcionalidades da API:
+### Funcionalidades disponíveis:
 
-* Cadastro, listagem, edição e remoção de:
+* Gerenciamento completo de:
 
   * 🍽 Restaurantes
   * 🥘 Pratos
@@ -36,7 +36,7 @@ Funcionalidades da API:
 ### 🎨 Front-end
 
 * React
-* CSS/TypeScript
+* CSS / TypeScript
 * npm (Node Package Manager)
 
 ### 🔁 Controle de Versão
@@ -46,7 +46,7 @@ Funcionalidades da API:
 
 ---
 
-## 🚀 Passo a Passo para Executar o Projeto Completo
+## 🚀 Como Executar o Projeto Completo
 
 ### 1. Clonar o Repositório e Abrir no VS Code
 
@@ -58,54 +58,46 @@ code .
 
 ---
 
-### 2. Rodar o Back-end (API)
+### 2. Executar o Back-end (API)
+
+Abra o terminal (atalho: Win + \' ) e execute os comandos abaixo:
 
 bash
-# Abrir o terminal
-Win + '
-
-# Ir até a pasta do back-end
 cd .\Positivo\MinimalAPI\
 code .
-
-# Restaurar e executar
-Win + '
 dotnet restore
 dotnet run
 
 
-Acesse o Swagger em: [http://localhost:5163/swagger/index.html](http://localhost:5163/swagger/index.html)
+Acesse o Swagger da API em: [http://localhost:5163/swagger/index.html](http://localhost:5163/swagger/index.html)
 
 ---
 
-### 3. Rodar o Front-end (React)
+### 3. Executar o Front-end (React)
+
+No terminal:
 
 bash
-# Voltar ao projeto raiz
-cd ..
-cd .\frontend\
+cd ../frontend
 code .
-
-# Instalar dependências e rodar
-Win + '
 npm install
 npm start
 
 
-Acesse o front-end em: [http://localhost:3000](http://localhost:3000)
+O front-end será aberto em: [http://localhost:3000](http://localhost:3000)
 
-> Caso não abra automaticamente, digite o endereço no navegador manualmente.
+> Se não abrir automaticamente, acesse o link manualmente pelo navegador.
 
 ---
 
-### 4. Testes com a API
+### 4. Testar a API
 
-Com o back-end rodando, você pode:
+Você pode testar a API de duas formas:
 
-* Usar o *Swagger*
-* Ou o arquivo requests.http na pasta /Testes para testar manualmente as rotas da API.
+* Usando a interface Swagger
+* Utilizando o arquivo requests.http na pasta /Testes
 
-Para testar os métodos *POST* e *PUT* corretamente no Swagger, utilize a seguinte estrutura de JSON:
+Para testar os métodos *POST* e *PUT* no Swagger, utilize o seguinte modelo:
 
 json
 {
@@ -116,8 +108,8 @@ json
 }
 
 
-Com o front-end rodando, é possível interagir com todas as funcionalidades diretamente pela interface web.
+Com o front-end funcionando, você poderá interagir diretamente com todas as funcionalidades da aplicação através da interface web.
 
 ---
 
-✅ Tudo pronto! O sistema de cardápio digital está funcionando. Se tiver dúvidas ou problemas, o ChatGPT pode te ajudar! 🚀
+✅ Pronto! Seu sistema de cardápio digital está ativo e funcionando. Em caso de dúvidas, consulte a documentação ou peça ajuda ao ChatGPT. 🚀
