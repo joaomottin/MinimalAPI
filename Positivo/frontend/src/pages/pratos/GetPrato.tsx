@@ -3,7 +3,12 @@ import axios from 'axios';
 import { Prato } from '../../models/Prato';
 import '../../Style.css';
 
-export default function ListaPratos() {
+interface GetPratoProps {
+  onSelectPrato: (id: number) => void;
+  refreshFlag: boolean;
+}
+
+export default function GetPrato({ onSelectPrato, refreshFlag }: GetPratoProps) {
   const [pratos, setPratos] = useState<Prato[]>([]);
 
   useEffect(() => {
@@ -15,7 +20,7 @@ export default function ListaPratos() {
       .catch((err) => {
         console.error('Erro ao buscar pratos:', err);
       });
-  }, []);
+  }, [refreshFlag]);
 
   return (
     <div className="container">
@@ -37,7 +42,11 @@ export default function ListaPratos() {
             </tr>
           )}
           {pratos.map((prato) => (
-            <tr key={prato.id}>
+            <tr
+              key={prato.id}
+              style={{ cursor: 'pointer' }}
+              onClick={() => onSelectPrato(prato.id)}
+            >
               <td>{prato.id}</td>
               <td>{prato.nome}</td>
               <td>{prato.descricao}</td>
