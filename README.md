@@ -16,10 +16,8 @@ Este é um sistema completo de cardápio digital, composto por:
 
 * Gerenciamento completo de:
 
-  * 🍽 Restaurantes
-  * 🥘 Pratos
-  * 🗂 Categorias
-  * 🧂 Ingredientes
+  * 🍽 Restaurantes (GET/GET{ID})
+  * 🥘 Pratos (CRUD)
 
 ---
 
@@ -97,15 +95,15 @@ Você pode testar a API de duas formas:
 * Usando a interface Swagger
 * Utilizando o arquivo requests.http na pasta /Testes
 
-Para testar os métodos *POST* e *PUT* no Swagger, utilize o seguinte modelo:
+Para testar os métodos *POST* e *PUT* no Swagger, utilize o seguinte modelo:  
 
-json
+
 {
   "nome": "Teste",
   "descricao": "Teste",
   "preco": 1,
   "restauranteId": 1
-}
+}  
 
 
 Com o front-end funcionando, você poderá interagir diretamente com todas as funcionalidades da aplicação através da interface web.
